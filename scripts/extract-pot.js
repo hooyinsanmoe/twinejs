@@ -122,12 +122,12 @@ glob.sync('src/**/*.js').forEach(fileName => {
 				}
 
 				throw new Error(
-					`Don't know how to parse operator ${node.operator}`
+					`Don't know how to parse operator ${node.operator}(${fileName}:${node.loc.start.line})`
 				);
 			break;
 
 			default:
-				throw new Error(`Don't know how to parse value of ${node.type}`);
+				throw new Error(`Don't know how to parse value of ${node.type}(${fileName}:${node.loc.start.line})`);
 		}
 	}
 
